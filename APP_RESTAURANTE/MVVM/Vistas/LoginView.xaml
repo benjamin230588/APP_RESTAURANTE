@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APP_RESTAURANTE.MVVM.Vistas.LoginView"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+    <!-- Este es un comentario  <Entry Text="{Binding objeto.usuario}">-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#165ded</Color>
+            <Color x:Key="Secondary">#7b0cf1</Color>
+            <Color x:Key="tercero">#ffffff</Color>
+            <Color x:Key="SecondaryColor">#9742ff</Color>
+
+            <Style x:Key="btningresar" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource Secondary}" />
+                <Setter Property="TextColor" Value="{StaticResource tercero}" />
+
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid BackgroundColor="Blue">
+       
+
+        <StackLayout Orientation="Vertical" Margin="20" Spacing="15" WidthRequest="{OnPlatform WinUI=500}" >
+            <Image Source="login1.png" Margin="0" HeightRequest="180" ></Image>
+
+            <StackLayout HeightRequest="30"></StackLayout>
+           
+            <Frame StyleClass="FrameBorderLogin">
+                <Entry x:Name="txtusuario" 
+                         HorizontalTextAlignment="Center"
+                         FontSize="17"
+                         Placeholder="Ingrese usuario"
+                         Text="{Binding usuario}" ></Entry>
+            </Frame>
+            <Frame StyleClass="FrameBorderLogin">
+                <Entry x:Name="txtpasword" 
+                         IsPassword="True"
+                         HorizontalTextAlignment="Center"
+                         FontSize="17"
+                         Placeholder="Ingrese Password"
+                         Text="{Binding pasword}"  ></Entry>
+            </Frame>
+
+            <Button x:Name="btningresar" FontSize="17" Command="{Binding IngresarComand}" Text="INGRESAR" BackgroundColor="Red" CornerRadius="15"></Button>
+           
+
+
+            <StackLayout Orientation="Horizontal"  HorizontalOptions="Center"
+             VerticalOptions="Center" Spacing="25">
+                <Label Text="Desea recordar contraseña?" TextColor="White" FontSize="16"  VerticalOptions="Center" />
+                <Switch ScaleX="1.2" ScaleY="1.2" IsToggled="{Binding estadoSwitch}"
+                        VerticalOptions="Center" x:Name="validacontra" ThumbColor="{Binding colorSwitch}" >
+                    <Switch.Behaviors>
+                        <toolkit:EventToCommandBehavior
+                        EventName="Toggled"
+                        Command="{Binding SwitchToggledCommand}" /> 
+                    </Switch.Behaviors>
+
+                </Switch>
+
+            </StackLayout>
+        </StackLayout>
+
+        <Grid BackgroundColor="#848484" Opacity=".8" IsVisible="{Binding flgindicador}"
+                   InputTransparent="False">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+            </Grid.GestureRecognizers>
+            <ActivityIndicator
+               HorizontalOptions="Center"
+                IsRunning="{Binding flgindicador}"
+                Color="#DF013A"
+                />
+        </Grid>
+    </Grid>
+    <!-- 
+    <StackLayout Orientation="Vertical" BackgroundColor="Red"
+        Spacing="15"
+        >
+        <Entry Text="{Binding usuario}">
+            
+        </Entry>
+
+        <Entry Text="{Binding pasword}"></Entry>
+        <Button Text="dale" x:Name="txtboton" Clicked="txtboton_Clicked"></Button>
+    </StackLayout>-->
+</ContentPage>

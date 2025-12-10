@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APP_RESTAURANTE.MVVM.Vistas.PrincipalMasterView"
+             xmlns:pagina="clr-namespace:APP_RESTAURANTE.MVVM.Vistas"
+             FlyoutLayoutBehavior="Popover"
+             Title="PrincipalMasterView"
+             >
+    <FlyoutPage.Flyout>
+        <pagina:MenuView></pagina:MenuView>
+    </FlyoutPage.Flyout>
+
+    <!-- Contenido principal -->
+    <FlyoutPage.Detail>
+        <NavigationPage x:Name="Navigacion">
+            <x:Arguments>
+                <pagina:NewPage1></pagina:NewPage1>
+
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>

@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace APP_RESTAURANTE.Helpers
+{
+    public class Constantes
+    {
+
+        //public const string url = "http://fibrasurperu-001-site6.mtempurl.com";
+        //public const string url = "https://fibrasurperu-001-site4.etempurl.com";
+
+        public const string url = "https://fibrasurperu-001-site4.etempurl.com";
+
+        //public const string url = "http://192.168.1.92:45470";
+
+        //ttp://localhost:5045/swagger/index.html
+        // http://localhost:5045
+        // https://localhost:44357/api/cliente/lista
+
+
+        public const string api_login = "/api/login/Ingreso";
+        public const string api_getlistarequerimiento = "/api/Requerimiento/Lista";
+        public const string api_getlistacategoria = "/api/Categoria/Lista";
+        public const string api_getgrabarequerimiento = "/api/Requerimiento/Grabar";
+        public const string api_geteliminarcategoria = "/api/categoria/delete";
+        public const string api_geteliminarrequerimiento = "/api/Requerimiento/delete";
+        public const string api_getmodificarequerimiento = "/api/Requerimiento/Modificar";
+
+
+        public const string api_geteliminarproducto = "/api/Producto/delete";
+        public const string api_getlistaproducto = "/api/Producto/Lista";
+        public const string api_getlistaproductocategoria = "/api/Producto/ListaXcategoria/";
+
+
+        public const string api_getgrabarcategoria = "/api/categoria/grabar";
+
+        public const string api_getgrabarproducto = "/api/Producto/grabar";
+
+        public const string api_getmodificarcategoria = "/api/categoria/Modificar";
+        public const string api_getmodificarproducto = "/api/Producto/Modificar";
+
+        public const string api_getgrabarpedido = "/api/Pedido/Grabar";
+
+
+
+        public const string api_getaveria = "/Averias/Index";
+
+        public const string IdUsuario = "IdUsuario";
+        public const string nomusuario = "nomusuario";
+        public const string IdTipoUsuario = "IdTipoUsuario";
+
+        public const string RecordarContra = "RecordarContra";
+        public const string idNewToken = "idNewToken";
+        public const string idversion = "idversion";
+        public const string detallepedido = "detallepedido";
+
+    }
+}
