@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -56,6 +57,20 @@ namespace APP_RESTAURANTE.Helpers
         public const string idNewToken = "idNewToken";
         public const string idversion = "idversion";
         public const string detallepedido = "detallepedido";
+        private const string DBFileName = "SQLite.db3";
 
+        public const SQLiteOpenFlags Flags =
+             SQLiteOpenFlags.ReadWrite |
+             SQLiteOpenFlags.Create |
+             SQLiteOpenFlags.SharedCache;
+
+        public static string DatabasePath
+        {
+            get
+            {
+                return Path
+                     .Combine(FileSystem.AppDataDirectory, DBFileName);
+            }
+        }
     }
 }
