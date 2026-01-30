@@ -33,7 +33,7 @@ namespace APP_RESTAURANTE.RepositorioDB
                         }
                     }
                     return _connection;
-                }cc
+                }
             }
         }
 
